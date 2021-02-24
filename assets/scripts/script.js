@@ -7,7 +7,7 @@ import {
 window.addEventListener("DOMContentLoaded", () => {
   let translateBtn = document.getElementById("translateBtn");
   let swapBtn = document.getElementById("swapBtn");
-  let playBtn = document.getElementById("playBtn");
+  let playBtn = document.getElementById("playBtnImg");
   let translator = translateEnglishToMorse;
 
   translateBtn.addEventListener("click", () => {
@@ -33,14 +33,21 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   playBtn.addEventListener("click", () => {
-    playMorse();
+    if (translator === translateEnglishToMorse) {
+      playMorse();
+    } else {
+      let stringToSpeak = new SpeechSynthesisUtterance();
+      stringToSpeak.text = document.getElementById("translator__output-text").innerText
+      window.speechSynthesis.speak(stringToSpeak);
+    }
+    
   });
 });
 
 const playMorse = () => {
   const dit = "./assets/sounds/dit.wav";
   const dah = "./assets/sounds/dah.wav";
-  const space = "./assets/sounds/space2.wav";
+  const space = "./assets/sounds/space.wav";
 
   let sounds = {'.':dit, "-":dah, " ":space}
   let arr = document.getElementById('translator__output-text').innerText.split('')
@@ -59,3 +66,5 @@ const playMorse = () => {
   audio.src = playlist[0];
   audio.play();
 };
+
+//.... . .-.. .-.. ---  .- .-. ..- -... .- 
