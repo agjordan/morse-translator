@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Morse code Translator</title>
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <link rel="shortcut icon" href="./assets/images/a.png" type="image/x-icon">
+    <script type="module" src="./assets/scripts/translator.js"></script>
+    <script type="module" src="./assets/scripts/script.js"></script>
+  </head>
+  <body>
+    <div class="translator">
+      <h1>Translator</h1>
+      <div class="translator__body">
+        <div id="translator__input-tab" class="translator__tab">English</div>
+        <div id="translator__input-text" class="translator__textbox">
+          <textarea
+            id="translator__translate-value"
+            placeholder="Type something..."
+          ></textarea>
+        </div>
+        <div class="btnContainer">
+          <div id="translateBtn" class="button">Translate</div>
+          <div id="swapBtn" class="button">Swap languages</div>
+        </div>
+        <div id="translator__output-tab" class="translator__tab">Morse</div>
+        <div id="translator__output-text" class="translator__textbox"></div>
+        <div id="playBtn">Play</div>
+        
+      </div>
+    </div>
+  </body>
+</html>
