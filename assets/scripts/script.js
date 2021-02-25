@@ -1,15 +1,15 @@
 import {
-  translateEnglishToMorse,
-  translateMorseToEnglish,
+  translateEnglishToCode,
+  translateCodeToEnglish,
   JSON_MORSE,
 } from "./translator.js";
-//const { translateEnglishToMorse,  translateMorseToEnglish, JSON_MORSE } = require("./translator.js")
+//const { translateEnglishToCode,  translateCodeToEnglish, JSON_MORSE } = require("./translator.js")
 
 window.addEventListener("DOMContentLoaded", () => {
   let translateBtn = document.getElementById("translateBtn");
   let swapBtn = document.getElementById("swapBtn");
   let playBtn = document.getElementById("playBtnImg");
-  let translator = translateEnglishToMorse;
+  let translator = translateEnglishToCode;
 
   translateBtn.addEventListener("click", () => {
     let stringToTranslate = document.getElementById("translator__translate-value")
@@ -26,16 +26,16 @@ window.addEventListener("DOMContentLoaded", () => {
     let outputText = document.getElementById("translator__translate-output")
     let title = document.getElementById("translator__title")
 
-    if (translator === translateEnglishToMorse) {
+    if (translator === translateEnglishToCode) {
       inputTab.innerHTML = "Morse";
       outputTab.innerHTML = "English";
-      translator = translateMorseToEnglish;
+      translator = translateCodeToEnglish;
       title.innerHTML =  '-- --- .-. ... . ⟶ English'
       
     } else {
       inputTab.innerHTML = "English";
       outputTab.innerHTML = "Morse";
-      translator = translateEnglishToMorse;
+      translator = translateEnglishToCode;
       title.innerHTML =  'English ⟶ -- --- .-. ... .'
     }
     let tmp = inputText.value
@@ -44,7 +44,7 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   playBtn.addEventListener("click", () => {
-    if (translator === translateEnglishToMorse) {
+    if (translator === translateEnglishToCode) {
       playMorse();
     } else {
       let stringToSpeak = new SpeechSynthesisUtterance();

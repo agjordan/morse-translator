@@ -51,14 +51,14 @@ export const JSON_MORSE = {
     "ignore": " "
   }
 
-export const translateEnglishToMorse = (string, dictionary) => {
+export const translateEnglishToCode= (string, dictionary) => {
     let charArr = string.split('');
     let dictKeys = Object.keys(dictionary);
     if (!charArr.every(char => dictKeys.includes(char.toUpperCase()))) return "Invalid character(s) found";
     return charArr.map(char => dictionary[char.toUpperCase()]).join(' ').trim();
 }
 
-export const translateMorseToEnglish = (string, dictionary) => {
+export const translateCodeToEnglish = (string, dictionary) => {
     let charArr = string.split(' ');
     let dictVals = Object.values(dictionary);
     if (!charArr.every(char => dictVals.includes(char))) return "Invalid character(s) found";
@@ -68,5 +68,3 @@ export const translateMorseToEnglish = (string, dictionary) => {
 export const getKeyByValue = (object, value) => {
     return Object.keys(object).find(key => object[key] === value);
 }
-
-// module.exports = {translateEnglishToMorse, translateMorseToEnglish, getKeyByValue, JSON_MORSE}
