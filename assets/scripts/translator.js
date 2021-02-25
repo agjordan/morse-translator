@@ -1,4 +1,4 @@
-const JSON_MORSE = {
+export const JSON_MORSE = {
     "0": "-----",
     "1": ".----",
     "2": "..---",
@@ -51,22 +51,22 @@ const JSON_MORSE = {
     "ignore": " "
   }
 
-const translateEnglishToMorse = (string, dictionary) => {
+export const translateEnglishToMorse = (string, dictionary) => {
     let charArr = string.split('');
     let dictKeys = Object.keys(dictionary);
     if (!charArr.every(char => dictKeys.includes(char.toUpperCase()))) return "Invalid character(s) found";
     return charArr.map(char => dictionary[char.toUpperCase()]).join(' ').trim();
 }
 
-const translateMorseToEnglish = (string, dictionary) => {
+export const translateMorseToEnglish = (string, dictionary) => {
     let charArr = string.split(' ');
     let dictVals = Object.values(dictionary);
     if (!charArr.every(char => dictVals.includes(char))) return "Invalid character(s) found";
     return charArr.map(char => getKeyByValue(dictionary, char)).join('').trim();
 }
 
-const getKeyByValue = (object, value) => {
+export const getKeyByValue = (object, value) => {
     return Object.keys(object).find(key => object[key] === value);
 }
 
-module.exports = {translateEnglishToMorse, translateMorseToEnglish, getKeyByValue, JSON_MORSE}
+// module.exports = {translateEnglishToMorse, translateMorseToEnglish, getKeyByValue, JSON_MORSE}

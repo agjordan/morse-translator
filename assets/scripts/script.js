@@ -1,9 +1,9 @@
-// import {
-//   translateEnglishToMorse,
-//   translateMorseToEnglish,
-//   JSON_MORSE,
-// } from "./translator.js";
-const { translateEnglishToMorse,  translateMorseToEnglish, JSON_MORSE } = require("./translator.js")
+import {
+  translateEnglishToMorse,
+  translateMorseToEnglish,
+  JSON_MORSE,
+} from "./translator.js";
+//const { translateEnglishToMorse,  translateMorseToEnglish, JSON_MORSE } = require("./translator.js")
 
 window.addEventListener("DOMContentLoaded", () => {
   let translateBtn = document.getElementById("translateBtn");
