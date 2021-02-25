@@ -1,4 +1,6 @@
-import {translateEnglishToMorse, translateMorseToEnglish, JSON_MORSE} from './translator.js'
+// import {translateEnglishToMorse, translateMorseToEnglish, JSON_MORSE} from './translator.js'
+
+const { translateEnglishToMorse,  translateMorseToEnglish, JSON_MORSE } = require("./translator.js")
 
 describe('translateEnglishToMorse(string)', () => {
     it('should translate uppercase letters', () => {
