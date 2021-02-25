@@ -28,12 +28,11 @@ body {
   padding: 40px;
 }
 .translator h1 {
-  padding-bottom: 40px;
   font-size: 2.5em;
   font-style: italic;
 }
 .translator .translator__tab {
-  margin-right: auto;
+  margin: 30px auto 0 0;
   font-size: 25px;
 }
 .translator textarea {
@@ -56,7 +55,7 @@ body {
 .translator .button {
   display: inline-block;
   width: fit-content;
-  margin: 20px;
+  margin: 0 20px;
   padding: 5px 15px;
   background: #f1f2f2;
   border-radius: 5px;
