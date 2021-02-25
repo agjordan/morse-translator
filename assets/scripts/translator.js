@@ -55,7 +55,7 @@ export const translateEnglishToMorse = (string, dictionary) => {
     let charArr = string.split('')
     let dictKeys = Object.keys(dictionary)
     if (!charArr.every(char => dictKeys.includes(char.toUpperCase()))) return "Invalid character(s) found"
-    return charArr.map(char => dictionary[char.toUpperCase()]).join(' ').trim()
+    return charArr.map(char => dictionary[char.toUpperCase()]).join('  ').trim()
 }
 
 export const translateMorseToEnglish = (string, dictionary) => {
