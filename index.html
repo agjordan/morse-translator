@@ -12,7 +12,7 @@
   </head>
   <body>
     <div class="translator">
-      <h1>Translator</h1>
+      <h1 id="translator__title">English ⟶ -- --- .-. ... .</h1>
       <div class="translator__body">
         <div id="translator__input-tab" class="translator__tab">English</div>
         <div id="translator__input-text" class="translator__textbox">
@@ -21,13 +21,18 @@
             placeholder="Type something..."
           ></textarea>
         </div>
+        <div id="translator__output-tab" class="translator__tab">Morse</div>
+        <div id="translator__output-text" class="translator__textbox">
+          <textarea
+          id="translator__translate-output"
+          disabled
+          ></textarea>
+          <div id="playBtn" class="button"><img id=playBtnImg src="./assets/images/playBtn.png" alt="play morse sound"></div>
+        </div>
         <div class="btnContainer">
           <div id="translateBtn" class="button">Translate</div>
           <div id="swapBtn" class="button">Swap languages</div>
         </div>
-        <div id="translator__output-tab" class="translator__tab">Morse</div>
-        <div id="translator__output-text" class="translator__textbox"></div>
-        <div id="playBtn">Play</div>
         
       </div>
     </div>

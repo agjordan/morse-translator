@@ -8,13 +8,13 @@ describe('translateEnglishToMorse(string)', () => {
     }),
 
     it('should translate uppercase words', () => {
-        expect(translateEnglishToMorse('JIMMY', JSON_MORSE)).toEqual('.---&nbsp..&nbsp--&nbsp--&nbsp-.--');
-        expect(translateEnglishToMorse('ALEX', JSON_MORSE)).toEqual('.-&nbsp.-..&nbsp.&nbsp-..-');
+        expect(translateEnglishToMorse('JIMMY', JSON_MORSE)).toEqual('.--- .. -- -- -.--');
+        expect(translateEnglishToMorse('ALEX', JSON_MORSE)).toEqual('.- .-.. . -..-');
     }),
 
     it('should translate uppercase sentences', () => {
-        expect(translateEnglishToMorse('ALEX JORDAN', JSON_MORSE)).toEqual('.-&nbsp.-..&nbsp.&nbsp-..-&nbsp&nbsp.---&nbsp---&nbsp.-.&nbsp-..&nbsp.-&nbsp-.');
-        expect(translateEnglishToMorse('JRR TOLKIEN', JSON_MORSE)).toEqual('.---&nbsp.-.&nbsp.-.&nbsp&nbsp-&nbsp---&nbsp.-..&nbsp-.-&nbsp..&nbsp.&nbsp-.');
+        expect(translateEnglishToMorse('ALEX JORDAN', JSON_MORSE)).toEqual('.- .-.. . -..-  .--- --- .-. -.. .- -.');
+        expect(translateEnglishToMorse('JRR TOLKIEN', JSON_MORSE)).toEqual('.--- .-. .-.  - --- .-.. -.- .. . -.');
     }),
 
     it('should translate lowercase letters', () => {
@@ -24,13 +24,13 @@ describe('translateEnglishToMorse(string)', () => {
     }),
 
     it('should translate lowercase words', () => {
-        expect(translateEnglishToMorse('flora', JSON_MORSE, JSON_MORSE, JSON_MORSE)).toEqual('..-.&nbsp.-..&nbsp---&nbsp.-.&nbsp.-');
-        expect(translateEnglishToMorse('reading', JSON_MORSE, JSON_MORSE, JSON_MORSE)).toEqual('.-.&nbsp.&nbsp.-&nbsp-..&nbsp..&nbsp-.&nbsp--.');
+        expect(translateEnglishToMorse('flora', JSON_MORSE, JSON_MORSE, JSON_MORSE)).toEqual('..-. .-.. --- .-. .-');
+        expect(translateEnglishToMorse('reading', JSON_MORSE, JSON_MORSE, JSON_MORSE)).toEqual('.-. . .- -.. .. -. --.');
     }),
 
     it('should translate lowercase sentences', () => {
-        expect(translateEnglishToMorse('test morse', JSON_MORSE, JSON_MORSE)).toEqual('-&nbsp.&nbsp...&nbsp-&nbsp&nbsp--&nbsp---&nbsp.-.&nbsp...&nbsp.');
-        expect(translateEnglishToMorse('english is easy', JSON_MORSE, JSON_MORSE)).toEqual('.&nbsp-.&nbsp--.&nbsp.-..&nbsp..&nbsp...&nbsp....&nbsp&nbsp..&nbsp...&nbsp&nbsp.&nbsp.-&nbsp...&nbsp-.--');
+        expect(translateEnglishToMorse('test morse', JSON_MORSE, JSON_MORSE)).toEqual('- . ... -  -- --- .-. ... .');
+        expect(translateEnglishToMorse('english is easy', JSON_MORSE, JSON_MORSE)).toEqual('. -. --. .-.. .. ... ....  .. ...  . .- ... -.--');
     })
 
     it('should ignore strings with unsupported chars', () => {
@@ -59,8 +59,8 @@ describe('translateMorseToEnglish(string)', () => {
     }),
 
     it('should ignore morse strings with unsupported patterns', () => {
-        expect(translateEnglishToMorse('$$', JSON_MORSE)).toEqual('Invalid character(s) found');
-        expect(translateEnglishToMorse('..--..--', JSON_MORSE)).toEqual('Invalid character(s) found');
-        expect(translateEnglishToMorse('Alex is a friend', JSON_MORSE)).toEqual('Invalid character(s) found');
+        expect(translateMorseToEnglish('$$', JSON_MORSE)).toEqual('Invalid character(s) found');
+        expect(translateMorseToEnglish('..--..--', JSON_MORSE)).toEqual('Invalid character(s) found');
+        expect(translateMorseToEnglish('Alex is a friend', JSON_MORSE)).toEqual('Invalid character(s) found');
     })
 })
