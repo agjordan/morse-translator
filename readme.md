@@ -7,7 +7,7 @@ Learning about unit testing with Jest and setting up a CI/CD pipeline with Githu
 Using Audio and Speech Synthesis to turn textual data into audio
 
 ## Screenshots
-[translator](assets/images/translator.png)
+![translator](assets/images/translator.png)
 
 ## Tech/framework used
 - HTML
