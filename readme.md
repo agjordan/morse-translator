@@ -1,5 +1,5 @@
 # Morse - English Translator
-A translator to convert English into morse code and back
+A translator to convert English into morse code and back, can be viewed [here](https://agjordan.github.io/morse-translator/).
 
 ## Motivation
 Built to explore HTML, CSS, JS without libraries using a functional programming approach
